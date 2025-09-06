@@ -1,27 +1,19 @@
-// Import the functions you need from the SDKs you need
+// src/firebase.js
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Firebase config using environment variables
+// Replace below config with your Firebase project config
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyCF-LWgL8aEYNQc_cEjSmjs9pKqy9F63Cs",
+  authDomain: "inventory-management-40725.firebaseapp.com",
+  projectId: "inventory-management-40725",
+  storageBucket: "inventory-management-40725.appspot.com",
+  messagingSenderId: "737347135047",
+  appId: "1:737347135047:web:20ea48e3f38a7da25a7362",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Optional: Initialize analytics
-const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
-
-// Export Firestore & Auth
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-export default app;
