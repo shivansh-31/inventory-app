@@ -1,19 +1,15 @@
 // src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
 
-// Replace below config with your Firebase project config
 const firebaseConfig = {
-  apiKey: "AIzaSyCF-LWgL8aEYNQc_cEjSmjs9pKqy9F63Cs",
-  authDomain: "inventory-management-40725.firebaseapp.com",
-  projectId: "inventory-management-40725",
-  storageBucket: "inventory-management-40725.appspot.com",
-  messagingSenderId: "737347135047",
-  appId: "1:737347135047:web:20ea48e3f38a7da25a7362",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-export const auth = getAuth(app);
